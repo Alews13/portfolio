@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Metadatos básicos y SEO -->
+  <title>[NOMBRE Y APELLIDO] | Front-End Developer — Portfolio</title>
+  <meta name="description" content="Portfolio personal y académico de [NOMBRE Y APELLIDO]. Estudiante de 2° año de Licenciatura en Sistemas de Información y aspirante a Front-End Developer. Proyectos, código y habilidades técnicas.">
+  <meta name="author" content="[NOMBRE Y APELLIDO]">
+  <meta name="theme-color" content="#FFFFFF">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  
+  <!-- Tipografía: Inter (Google Fonts) con fallback a Arial y sans-serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Open Graph / Redes Sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="[NOMBRE Y APELLIDO] | Front-End Developer — Portfolio">
+  <meta property="og:description" content="Portfolio web personal: Proyectos académicos, habilidades de programación y desarrollo Front-End con HTML5, CSS3 y JavaScript.">
+  <meta property="og:image" content="assets/images/og-image-placeholder.svg">
+  <meta property="og:url" content="[CONFIGURAR: URL definitiva del portfolio]">
+
+  <!-- Hojas de estilo -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- ========================================================
+       ACCESIBILIDAD: Enlace de salto al contenido principal
+       ======================================================== -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- ========================================================
+       01. HEADER / NAVIGATION
+       Sticky header con logo, navegación ancla, menú hamburguesa
+       y accesos directos.
+       ======================================================== -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      
+      <!-- Logo o iniciales del propietario -->
+      <!-- CONFIGURAR: Iniciales y nombre del propietario -->
+      <a href="#hero" class="brand-logo" aria-label="Ir al inicio del portfolio de [NOMBRE Y APELLIDO]">
+        <span class="brand-monogram" aria-hidden="true">&lt;[IN]&gt;</span>
+        <span class="brand-name">[NOMBRE Y APELLIDO]</span>
+      </a>
+
+      <!-- Botón de menú hamburguesa para dispositivos móviles -->
+      <button 
+        type="button" 
+        class="nav-toggle" 
+        id="nav-toggle" 
+        aria-expanded="false" 
+        aria-controls="primary-nav" 
+        aria-label="Abrir menú de navegación">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+
+      <!-- Navegación principal con enlaces a las nueve secciones -->
+      <nav class="primary-nav" id="primary-nav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <!-- Enlace 1: Header / Inicio -->
+          <li class="nav-item">
+            <a href="#header" class="nav-link">01. Inicio</a>
+          </li>
+          <!-- Enlace 2: Hero -->
+          <li class="nav-item">
+            <a href="#hero" class="nav-link">02. Presentación</a>
+          </li>
+          <!-- Enlace 3: Métricas -->
+          <li class="nav-item">
+            <a href="#metrics" class="nav-link">03. Métricas</a>
+          </li>
+          <!-- Enlace 4: Skills -->
+          <li class="nav-item">
+            <a href="#skills" class="nav-link">04. Skills</a>
+          </li>
+          <!-- Enlace 5: Proyectos -->
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">05. Proyectos</a>
+          </li>
+          <!-- Enlace 6: Experiencia / Educación -->
+          <li class="nav-item">
+            <a href="#experience" class="nav-link">06. Trayectoria</a>
+          </li>
+          <!-- Enlace 7: Sobre Mí -->
+          <li class="nav-item">
+            <a href="#about" class="nav-link">07. Sobre Mí</a>
+          </li>
+          <!-- Enlace 8: Contacto -->
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">08. Contacto</a>
+          </li>
+          <!-- Enlace 9: Footer -->
+          <li class="nav-item">
+            <a href="#footer" class="nav-link">09. Pie</a>
+          </li>
+        </ul>
+
+        <!-- Acciones externas de navegación -->
+        <div class="nav-actions">
+          <!-- CONFIGURAR: URL de GitHub personal -->
+          <a 
+            href="https://github.com/[CONFIGURAR_USUARIO_GITHUB]" 
+            class="btn btn--outline-sm nav-github-link" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Ver perfil de GitHub en pestaña nueva">
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            <span>GitHub</span>
+          </a>
+
+          <!-- Botón de contacto directo -->
+          <a href="#contact" class="btn btn--primary-sm">Contactar</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       CONTENIDO PRINCIPAL
+       ======================================================== -->
+  <main id="main-content">
+
+    <!-- ======================================================
+         02. HERO
+         Presentación principal, rol, disponibilidad y llamadas a la acción
+         ====================================================== -->
+    <section class="section section--hero" id="hero" aria-labelledby="hero-heading">
+      <div class="container hero-container">
+        
+        <!-- Indicador de disponibilidad -->
+        <!-- CONFIGURAR: Estado de disponibilidad -->
+        <div class="status-badge" role="status">
+          <span class="status-badge__dot" aria-hidden="true"></span>
+          <span class="status-badge__text">[CONFIGURAR: Disponible para proyectos / pasantías académicas]</span>
+        </div>
+
+        <!-- Único H1 del documento -->
+        <!-- CONFIGURAR: Nombre completo del propietario -->
+        <h1 class="hero-title" id="hero-heading">
+          <span class="hero-title__eyebrow">Hola, mi nombre es</span>
+          <span class="hero-title__name">[NOMBRE Y APELLIDO]</span>
+        </h1>
+
+        <!-- Rol profesional objetivo -->
+        <p class="hero-role">
+          <span class="hero-role__main">Front-End Developer</span>
+          <span class="hero-role__divider" aria-hidden="true">|</span>
+          <span class="hero-role__sub">Estudiante de Licenciatura en Sistemas</span>
+        </p>
+
+        <!-- Presentación profesional breve -->
+        <!-- CONFIGURAR: Descripción profesional personalizada -->
+        <p class="hero-bio">
+          Estudiante de segundo año de la Licenciatura en Sistemas de Información con orientación al desarrollo web y la programación estructurada. Enfocado en la construcción de interfaces accesibles, semánticas y eficientes utilizando estándares web puros (HTML5, CSS3 y JavaScript vanilla), con bases de inglés técnico y una búsqueda continua de buenas prácticas de código.
+        </p>
+
+        <!-- Ubicación -->
+        <!-- CONFIGURAR: Ubicación del propietario -->
+        <p class="hero-location">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>Ubicación: <strong>[CONFIGURAR: Ciudad, País]</strong></span>
+        </p>
+
+        <!-- Botones de llamada a la acción -->
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn--primary">Visualizar proyectos</a>
+          <a href="#contact" class="btn btn--secondary">Contactar</a>
+          <!-- CONFIGURAR: Enlace a archivo de Curriculum Vitae en PDF -->
+          <a 
+            href="[CONFIGURAR: URL de CV en PDF]" 
+            class="btn btn--outline" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Descargar o ver Curriculum Vitae en PDF (se abre en pestaña nueva)">
+            Ver CV (PDF)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         03. MÉTRICAS / HIGHLIGHTS
+         Aspectos cuantitativos académicos y técnicos con datos provisionales
+         ====================================================== -->
+    <section class="section section--metrics" id="metrics" aria-labelledby="metrics-heading">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag" aria-hidden="true">03 / Métricas</span>
+          <h2 class="section-title" id="metrics-heading">Aspectos Destacados &amp; Métricas</h2>
+          <p class="section-description">
+            Indicadores académicos y de progreso técnico formativo. Valores provisionales sujetos a actualización.
+          </p>
+        </div>
+
+        <!-- Cuadrícula de tarjetas de métricas -->
+        <div class="metrics-grid">
+          
+          <!-- Métrica 1: Año de carrera -->
+          <article class="metric-card">
+            <div class="metric-card__value">[DATO PROVISIONAL: 2°]</div>
+            <h3 class="metric-card__title">Año de Carrera Universitaria</h3>
+            <p class="metric-card__detail">Licenciatura en Sistemas de Información (en curso regular).</p>
+          </article>
+
+          <!-- Métrica 2: Cantidad de proyectos -->
+          <article class="metric-card">
+            <div class="metric-card__value">[DATO PROVISIONAL: 3+]</div>
+            <h3 class="metric-card__title">Proyectos Desarrollados</h3>
+            <p class="metric-card__detail">Trabajos prácticos universitarios y proyectos personales de maquetación.</p>
+          </article>
+
+          <!-- Métrica 3: Tecnologías utilizadas -->
+          <article class="metric-card">
+            <div class="metric-card__value">[DATO PROVISIONAL: 6+]</div>
+            <h3 class="metric-card__title">Tecnologías Aplicadas</h3>
+            <p class="metric-card__detail">Herramientas y lenguajes base empleados activamente en código.</p>
+          </article>
+
+          <!-- Métrica 4: Cursos / Formación complementaria -->
+          <article class="metric-card">
+            <div class="metric-card__value">[DATO PROVISIONAL: 100%]</div>
+            <h3 class="metric-card__title">Compromiso en Estándares</h3>
+            <p class="metric-card__detail">Énfasis en HTML semántico, accesibilidad web nativa y CSS modular.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         04. SKILLS
+         Categorías de habilidades técnicas (Front-End, Programming, Tools)
+         ====================================================== -->
+    <section class="section section--skills" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag" aria-hidden="true">04 / Habilidades</span>
+          <h2 class="section-title" id="skills-heading">Habilidades Técnicas</h2>
+          <p class="section-description">
+            Organización de competencias de desarrollo. Contenido técnico provisional sujeto a confirmación del estudiante.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          
+          <!-- Categoría 1: Front-End Development -->
+          <article class="skill-category">
+            <div class="skill-category__header">
+              <span class="skill-category__badge" aria-hidden="true">Área 01</span>
+              <h3 class="skill-category__title">Front-End Development</h3>
+            </div>
+            <p class="skill-category__desc">
+              Construcción de interfaces web semánticas, adaptables y accesibles priorizando el estándar nativo del navegador.
+            </p>
+            <!-- CONFIGURAR: Tecnologías de Front-End -->
+            <ul class="skills-list" aria-label="Tecnologías de Front-End">
+              <li class="skill-tag">HTML5 Semántico</li>
+              <li class="skill-tag">CSS3 (Flexbox &amp; CSS Grid)</li>
+              <li class="skill-tag">Responsive Web Design</li>
+              <li class="skill-tag">JavaScript Vanilla (DOM)</li>
+              <li class="skill-tag">Accesibilidad Web (a11y)</li>
+            </ul>
+            <p class="field-note">[Contenido provisional: Front-End sujeto a confirmación]</p>
+          </article>
+
+          <!-- Categoría 2: Programming -->
+          <article class="skill-category">
+            <div class="skill-category__header">
+              <span class="skill-category__badge" aria-hidden="true">Área 02</span>
+              <h3 class="skill-category__title">Programming &amp; Lógica</h3>
+            </div>
+            <p class="skill-category__desc">
+              Fundamentos de programación estructurada, resolución de algoritmos y modularidad de código adquiridos en la carrera.
+            </p>
+            <!-- CONFIGURAR: Tecnologías y lenguajes de programación -->
+            <ul class="skills-list" aria-label="Lenguajes y conceptos de programación">
+              <li class="skill-tag">JavaScript (ES6+)</li>
+              <li class="skill-tag">Python (Nivel académico)</li>
+              <li class="skill-tag">Lógica algorítmica</li>
+              <li class="skill-tag">Estructuras de datos básicas</li>
+              <li class="skill-tag">Programación modular</li>
+            </ul>
+            <p class="field-note">[Contenido provisional: Lenguajes sujetos a confirmación]</p>
+          </article>
+
+          <!-- Categoría 3: Tools & Technologies -->
+          <article class="skill-category">
+            <div class="skill-category__header">
+              <span class="skill-category__badge" aria-hidden="true">Área 03</span>
+              <h3 class="skill-category__title">Tools &amp; Technologies</h3>
+            </div>
+            <p class="skill-category__desc">
+              Herramientas de soporte para el control de versiones, entorno de trabajo y depuración en el ciclo de desarrollo.
+            </p>
+            <!-- CONFIGURAR: Herramientas de desarrollo -->
+            <ul class="skills-list" aria-label="Herramientas de desarrollo">
+              <li class="skill-tag">Git</li>
+              <li class="skill-tag">GitHub</li>
+              <li class="skill-tag">Visual Studio Code</li>
+              <li class="skill-tag">Navegador &amp; DevTools</li>
+              <li class="skill-tag">Terminal / CLI básico</li>
+            </ul>
+            <p class="field-note">[Contenido provisional: Herramientas sujetas a confirmación]</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         05. PROJECTS
+         Mínimo 3 tarjetas de proyectos académicos/personales
+         con enlace al caso de estudio interno
+         ====================================================== -->
+    <section class="section section--projects" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag" aria-hidden="true">05 / Proyectos</span>
+          <h2 class="section-title" id="projects-heading">Proyectos Desarrollados</h2>
+          <p class="section-description">
+            Selección de trabajos académicos y personales. Incluye enlaces a repositorios y caso de estudio detallado.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- Proyecto 1: Portfolio Web Personal (con Caso de Estudio) -->
+          <article class="project-card">
+            <figure class="project-card__media">
+              <img 
+                src="assets/projects/project-placeholder-1.svg" 
+                alt="Mockup esquemático del proyecto Portfolio Web Personal con diseño responsive y 9 secciones" 
+                width="800" 
+                height="500" 
+                loading="lazy">
+              <figcaption class="sr-only">Espacio para mockup del Proyecto 1</figcaption>
+            </figure>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="project-badge">Académico</span>
+                <span class="project-year">[AÑO PROVISIONAL: 2026]</span>
+              </div>
+              <h3 class="project-card__title">
+                [PROYECTO 1: Portfolio Web Personal — Trabajo Final UX/UI]
+              </h3>
+              <p class="project-card__desc">
+                Desarrollo integral de la estructura base para un portfolio personal cumpliendo nueve secciones obligatorias, navegación accesible por teclado, diseño responsive y estilos provisionales organizados.
+              </p>
+              <div class="project-card__tech">
+                <span class="tech-pill">HTML5 Semántico</span>
+                <span class="tech-pill">CSS3 (Grid/Flexbox)</span>
+                <span class="tech-pill">JavaScript Vanilla</span>
+                <span class="tech-pill">Accesibilidad a11y</span>
+              </div>
+              <div class="project-card__outcome">
+                <strong>Resultado / Aprendizaje:</strong>
+                <p>Estructuración semántica rigurosa sin frameworks, aplicación de patrones de accesibilidad web y maquetación mobile-first neutra.</p>
+              </div>
+              <div class="project-card__links">
+                <!-- Enlace al Caso de Estudio interno -->
+                <a href="projects/project-case-study.html" class="btn btn--primary-sm">
+                  Leer caso de estudio
+                </a>
+                <!-- CONFIGURAR: Repositorio GitHub del proyecto 1 -->
+                <a 
+                  href="https://github.com/[CONFIGURAR_USUARIO_GITHUB]/portfolio" 
+                  class="btn btn--outline-sm" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Ver repositorio de Portfolio Web en GitHub (se abre en pestaña nueva)">
+                  Repositorio
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 2: Lógica / Aplicación de Práctica -->
+          <article class="project-card">
+            <figure class="project-card__media">
+              <img 
+                src="assets/projects/project-placeholder-2.svg" 
+                alt="Mockup esquemático del proyecto de visualización de datos y lógica algorítmica" 
+                width="800" 
+                height="500" 
+                loading="lazy">
+              <figcaption class="sr-only">Espacio para mockup del Proyecto 2</figcaption>
+            </figure>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="project-badge">Académico</span>
+                <span class="project-year">[AÑO PROVISIONAL: 2025]</span>
+              </div>
+              <h3 class="project-card__title">
+                [PROYECTO 2: Visualizador y Gestor de Datos Académicos]
+              </h3>
+              <p class="project-card__desc">
+                Aplicación web de práctica para la manipulación dinámica del DOM, validación de formularios y visualización estructurada de registros académicos sin librerías externas.
+              </p>
+              <div class="project-card__tech">
+                <span class="tech-pill">JavaScript ES6</span>
+                <span class="tech-pill">DOM Scripting</span>
+                <span class="tech-pill">HTML5</span>
+                <span class="tech-pill">CSS3</span>
+              </div>
+              <div class="project-card__outcome">
+                <strong>Resultado / Aprendizaje:</strong>
+                <p>Manejo de eventos, persistencia en localStorage, modularización de funciones en JavaScript y validaciones de entrada.</p>
+              </div>
+              <div class="project-card__links">
+                <!-- CONFIGURAR: Repositorio GitHub del proyecto 2 -->
+                <a 
+                  href="https://github.com/[CONFIGURAR_USUARIO_GITHUB]/[CONFIGURAR_REPO_2]" 
+                  class="btn btn--outline-sm" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Ver repositorio del Proyecto 2 en GitHub (se abre en pestaña nueva)">
+                  Repositorio
+                </a>
+                <span class="field-note">[Demo sujeta a confirmación]</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 3: Maqueta de Interfaz / Catálogo -->
+          <article class="project-card">
+            <figure class="project-card__media">
+              <img 
+                src="assets/projects/project-placeholder-3.svg" 
+                alt="Mockup esquemático de interfaz de catálogo web responsivo con cuadrícula y filtros" 
+                width="800" 
+                height="500" 
+                loading="lazy">
+              <figcaption class="sr-only">Espacio para mockup del Proyecto 3</figcaption>
+            </figure>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="project-badge">Personal</span>
+                <span class="project-year">[AÑO PROVISIONAL: 2025]</span>
+              </div>
+              <h3 class="project-card__title">
+                [PROYECTO 3: Interfaz Web Adaptable &amp; Catálogo de Componentes]
+              </h3>
+              <p class="project-card__desc">
+                Desarrollo de un catálogo interactivo de componentes visuales reutilizables, explorando el comportamiento responsivo en resoluciones móviles, tablets y monitores de escritorio.
+              </p>
+              <div class="project-card__tech">
+                <span class="tech-pill">CSS Grid</span>
+                <span class="tech-pill">Flexbox Layout</span>
+                <span class="tech-pill">Media Queries</span>
+                <span class="tech-pill">HTML5 Semántico</span>
+              </div>
+              <div class="project-card__outcome">
+                <strong>Resultado / Aprendizaje:</strong>
+                <p>Dominio de sistemas de cuadrícula flexible, jerarquía tipográfica visual y optimización de layout sin desbordamientos horizontales.</p>
+              </div>
+              <div class="project-card__links">
+                <!-- CONFIGURAR: Repositorio GitHub del proyecto 3 -->
+                <a 
+                  href="https://github.com/[CONFIGURAR_USUARIO_GITHUB]/[CONFIGURAR_REPO_3]" 
+                  class="btn btn--outline-sm" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Ver repositorio del Proyecto 3 en GitHub (se abre en pestaña nueva)">
+                  Repositorio
+                </a>
+                <span class="field-note">[Demo sujeta a confirmación]</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         06. EXPERIENCE / EDUCATION
+         Línea de tiempo para formación universitaria, capacitaciones
+         y espacio reservado para experiencia laboral futura.
+         ====================================================== -->
+    <section class="section section--experience" id="experience" aria-labelledby="experience-heading">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag" aria-hidden="true">06 / Trayectoria</span>
+          <h2 class="section-title" id="experience-heading">Educación &amp; Experiencia</h2>
+          <p class="section-description">
+            Línea cronológica formativa. La estructura contempla formación académica actual y espacios reservados para futura inserción laboral (no se inventa experiencia).
+          </p>
+        </div>
+
+        <div class="timeline">
+          
+          <!-- Hito 1: Formación Universitaria -->
+          <article class="timeline-item">
+            <div class="timeline-item__marker" aria-hidden="true"></div>
+            <div class="timeline-item__content">
+              <div class="timeline-item__period">2025 — Presente (En curso)</div>
+              <!-- CONFIGURAR: Nombre de la Universidad / Facultad -->
+              <h3 class="timeline-item__role">Licenciatura en Sistemas de Información</h3>
+              <p class="timeline-item__institution">[CONFIGURAR: Nombre de la Universidad / Facultad]</p>
+              <p class="timeline-item__desc">
+                Estudiante regular de segundo año. Formación integral en ciencias de la computación, desarrollo de software, modelado de sistemas, bases de datos y diseño de interfaces de usuario.
+              </p>
+              <div class="timeline-item__learnings">
+                <h4 class="timeline-item__subheading">Aprendizajes y logros académicos:</h4>
+                <ul class="bullet-list">
+                  <li><strong>Fundamentos sólidos:</strong> Asimilación de algoritmia, programación estructurada y análisis de requerimientos de software.</li>
+                  <li><strong>Diseño centrado en el usuario:</strong> Aprobación de proyectos de interfaz y usabilidad enfocados en accesibilidad y estándares web.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Hito 2: Cursos y Capacitaciones Complementarias -->
+          <article class="timeline-item">
+            <div class="timeline-item__marker" aria-hidden="true"></div>
+            <div class="timeline-item__content">
+              <div class="timeline-item__period">[DATO PROVISIONAL: 2025 — 2026]</div>
+              <!-- CONFIGURAR: Título de curso complementario -->
+              <h3 class="timeline-item__role">[CURSO PROVISIONAL: Fundamentos de Front-End &amp; Programación Web]</h3>
+              <p class="timeline-item__institution">[CONFIGURAR: Institución, Academia o Plataforma de Capacitación]</p>
+              <p class="timeline-item__desc">
+                Capacitación técnica complementaria enfocada en el fortalecimiento de habilidades de maquetación, estándares de código abierto y flujo de trabajo con Git.
+              </p>
+              <div class="timeline-item__learnings">
+                <h4 class="timeline-item__subheading">Aprendizajes destacados:</h4>
+                <ul class="bullet-list">
+                  <li><strong>Maquetación y maquetado moderno:</strong> Prácticas con layout fluido, Flexbox, CSS Grid y buenas prácticas de nomenclatura.</li>
+                  <li><strong>Control de versiones:</strong> Manejo de ramas, commits convencionales y publicación de código fuente en GitHub.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Hito 3: Espacio preparado para Experiencia Laboral Futura -->
+          <article class="timeline-item timeline-item--future">
+            <div class="timeline-item__marker timeline-item__marker--future" aria-hidden="true"></div>
+            <div class="timeline-item__content">
+              <div class="timeline-item__period">[ESPACIO RESERVADO: Período Futuro]</div>
+              <!-- CONFIGURAR: Espacio para futura experiencia laboral -->
+              <h3 class="timeline-item__role">[ESPACIO RESERVADO: Primera Experiencia Laboral / Pasantía Front-End]</h3>
+              <p class="timeline-item__institution">[ESPACIO RESERVADO: Nombre de la Empresa u Organización]</p>
+              <p class="timeline-item__desc">
+                <em>Estructura lista para documentar la primera práctica profesional o inserción laboral en el sector de tecnologías de la información. No se inventa experiencia laboral previa.</em>
+              </p>
+              <div class="timeline-item__learnings">
+                <h4 class="timeline-item__subheading">Campos previstos para logros:</h4>
+                <ul class="bullet-list">
+                  <li><strong>Logro 1:</strong> [Espacio reservado para registrar responsabilidades o tecnologías aplicadas].</li>
+                  <li><strong>Logro 2:</strong> [Espacio reservado para registrar resultados o aprendizajes en entorno productivo].</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         07. ABOUT ME
+         Presentación personal, espacio para foto, intereses
+         y tres principios de trabajo.
+         ====================================================== -->
+    <section class="section section--about" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag" aria-hidden="true">07 / Perfil</span>
+          <h2 class="section-title" id="about-heading">Sobre Mí</h2>
+          <p class="section-description">
+            Conocé mi contexto académico, vocación técnica y los principios con los que abordo cada desarrollo.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          
+          <!-- Espacio para fotografía personal -->
+          <div class="about-photo-wrapper">
+            <figure class="profile-figure">
+              <!-- CONFIGURAR: Reemplazar src con imagen real en assets/images/ -->
+              <img 
+                src="assets/images/profile-placeholder.svg" 
+                alt="Espacio para fotografía de perfil de [NOMBRE Y APELLIDO] - Front-End Developer" 
+                class="profile-img" 
+                width="400" 
+                height="400" 
+                loading="lazy">
+              <figcaption class="field-note text-center">
+                [Espacio reservado para fotografía de perfil: 400x400 px]
+              </figcaption>
+            </figure>
+
+            <!-- Resumen de idiomas -->
+            <div class="about-languages">
+              <h3 class="about-languages__title">Idiomas</h3>
+              <ul class="languages-list">
+                <!-- CONFIGURAR: Idiomas y niveles -->
+                <li><strong>Español:</strong> Nativo</li>
+                <li><strong>Inglés:</strong> Básico / Lectura técnica en documentación</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Información personal y principios -->
+          <div class="about-content">
+            
+            <h3 class="about-subheading">Presentación Personal</h3>
+            <!-- CONFIGURAR: Texto de presentación personal -->
+            <p>
+              Soy estudiante de segundo año de la <strong>Licenciatura en Sistemas de Información</strong> con un marcado interés por el desarrollo <strong>Front-End</strong> y la arquitectura de software web. Mi enfoque formativo combina el rigor algorítmico y la lógica de programación aprendida en la universidad con la construcción práctica de interfaces limpias y bien estructuradas.
+            </p>
+            <p>
+              Disfruto el proceso de resolver problemas mediante código: desde la planificación estructural de un documento HTML hasta la orquestación de estilos CSS eficientes y scripts interactivos en JavaScript. Me caracterizo por ser una persona organizada, curiosa por aprender de manera autodidacta y enfocada en entender cómo funcionan las cosas por debajo del código.
+            </p>
+
+            <h3 class="about-subheading">Intereses Profesionales</h3>
+            <!-- CONFIGURAR: Intereses profesionales -->
+            <p>
+              Mis principales áreas de interés abarcan el desarrollo web accesible (normas WCAG), la optimización de performance en navegadores, los sistemas de diseño de código modular y la profundización en la programación con JavaScript puro antes de abordar librerías complejas.
+            </p>
+
+            <h3 class="about-subheading">Tres Principios de Trabajo</h3>
+            <div class="values-list">
+              
+              <!-- Principio 1 -->
+              <article class="value-item">
+                <span class="value-item__number" aria-hidden="true">01</span>
+                <div class="value-item__content">
+                  <h4 class="value-item__title">Semántica y Accesibilidad como Prioridad</h4>
+                  <p class="value-item__desc">
+                    El código debe ser legible tanto para desarrolladores como para tecnologías asistivas. Priorizo siempre el uso de etiquetas HTML correctas y navegación por teclado natural.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Principio 2 -->
+              <article class="value-item">
+                <span class="value-item__number" aria-hidden="true">02</span>
+                <div class="value-item__content">
+                  <h4 class="value-item__title">Aprendizaje Continuo y Rigor Técnico</h4>
+                  <p class="value-item__desc">
+                    Mantengo una actitud de investigación constante y autocrítica constructiva, aprendiendo de los errores para escribir soluciones más limpias, escalables y mantenibles.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Principio 3 -->
+              <article class="value-item">
+                <span class="value-item__number" aria-hidden="true">03</span>
+                <div class="value-item__content">
+                  <h4 class="value-item__title">Empatía y Experiencia de Usuario (UX)</h4>
+                  <p class="value-item__desc">
+                    Cada decisión técnica tiene un impacto en la persona que utiliza el sistema. Procuro que las interfaces sean predecibles, consistentes y sin fricciones innecesarias.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         08. CONTACT
+         Bloque de contacto con email (mailto:), redes sociales,
+         llamado a la acción y formulario demostrativo sin backend.
+         ====================================================== -->
+    <section class="section section--contact" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag" aria-hidden="true">08 / Conectar</span>
+          <h2 class="section-title" id="contact-heading">Contacto</h2>
+          <p class="section-description">
+            ¿Te interesa mi perfil o querés conversar sobre proyectos académicos y oportunidades formativas? Ponete en contacto conmigo por cualquiera de estas vías.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Canales directos de contacto -->
+          <div class="contact-info">
+            <h3 class="contact-subtitle">Canales de Comunicación</h3>
+            <p class="contact-text">
+              Estoy disponible para responder consultas y participar en iniciativas de desarrollo de software.
+            </p>
+
+            <ul class="contact-channels" aria-label="Lista de medios de contacto">
+              
+              <!-- Canal 1: Email -->
+              <!-- CONFIGURAR: Correo electrónico personal -->
+              <li class="contact-channel-item">
+                <a 
+                  href="mailto:[CONFIGURAR_EMAIL@EJEMPLO.COM]" 
+                  class="contact-link" 
+                  aria-label="Enviar correo electrónico a [CONFIGURAR_EMAIL@EJEMPLO.COM]">
+                  <div class="contact-link__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div class="contact-link__content">
+                    <span class="contact-link__label">Correo Electrónico</span>
+                    <span class="contact-link__value">[CONFIGURAR_EMAIL@EJEMPLO.COM]</span>
+                  </div>
+                </a>
+              </li>
+
+              <!-- Canal 2: LinkedIn -->
+              <!-- CONFIGURAR: URL de perfil de LinkedIn -->
+              <li class="contact-channel-item">
+                <a 
+                  href="https://linkedin.com/in/[CONFIGURAR_PERFIL_LINKEDIN]" 
+                  class="contact-link" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Visitar perfil de LinkedIn (se abre en pestaña nueva)">
+                  <div class="contact-link__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0-.01-3.27 1.64 1.64 0 0 0 .01 3.27m1.4 9.74V9.92H5.06v8.58h2.8z"/>
+                    </svg>
+                  </div>
+                  <div class="contact-link__content">
+                    <span class="contact-link__label">LinkedIn</span>
+                    <span class="contact-link__value">[CONFIGURAR: linkedin.com/in/usuario]</span>
+                  </div>
+                </a>
+              </li>
+
+              <!-- Canal 3: GitHub -->
+              <!-- CONFIGURAR: URL de perfil de GitHub -->
+              <li class="contact-channel-item">
+                <a 
+                  href="https://github.com/[CONFIGURAR_USUARIO_GITHUB]" 
+                  class="contact-link" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Visitar repositorio y perfil de GitHub (se abre en pestaña nueva)">
+                  <div class="contact-link__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    </svg>
+                  </div>
+                  <div class="contact-link__content">
+                    <span class="contact-link__label">GitHub</span>
+                    <span class="contact-link__value">[CONFIGURAR: github.com/usuario]</span>
+                  </div>
+                </a>
+              </li>
+
+              <!-- Canal 4: Otra red o plataforma -->
+              <!-- CONFIGURAR: URL de otra red (Discord, Twitter/X, etc.) -->
+              <li class="contact-channel-item">
+                <a 
+                  href="[CONFIGURAR: URL de otra red o plataforma]" 
+                  class="contact-link" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Visitar plataforma adicional (se abre en pestaña nueva)">
+                  <div class="contact-link__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                  </div>
+                  <div class="contact-link__content">
+                    <span class="contact-link__label">Otra Plataforma</span>
+                    <span class="contact-link__value">[CONFIGURAR: Discord / Twitter / Enlace adicional]</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Formulario de contacto demostrativo (sin backend en esta etapa) -->
+          <div class="contact-form-wrapper">
+            <h3 class="contact-subtitle">Mensaje Directo</h3>
+            <p class="field-note">
+              * Maqueta demostrativa: El formulario cuenta con validación HTML5 nativa pero no requiere backend en esta etapa inicial.
+            </p>
+
+            <form class="contact-form" id="contact-form" novalidate>
+              <!-- Campo: Nombre -->
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Nombre y Apellido <span class="required" aria-hidden="true">*</span></label>
+                <input 
+                  type="text" 
+                  id="contact-name" 
+                  name="name" 
+                  class="form-input" 
+                  placeholder="Tu nombre completo" 
+                  required 
+                  autocomplete="name">
+              </div>
+
+              <!-- Campo: Correo electrónico -->
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Correo Electrónico <span class="required" aria-hidden="true">*</span></label>
+                <input 
+                  type="email" 
+                  id="contact-email" 
+                  name="email" 
+                  class="form-input" 
+                  placeholder="ejemplo@correo.com" 
+                  required 
+                  autocomplete="email">
+              </div>
+
+              <!-- Campo: Asunto -->
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Asunto <span class="required" aria-hidden="true">*</span></label>
+                <input 
+                  type="text" 
+                  id="contact-subject" 
+                  name="subject" 
+                  class="form-input" 
+                  placeholder="Motivo del mensaje o consulta" 
+                  required>
+              </div>
+
+              <!-- Campo: Mensaje -->
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Mensaje <span class="required" aria-hidden="true">*</span></label>
+                <textarea 
+                  id="contact-message" 
+                  name="message" 
+                  class="form-textarea" 
+                  rows="4" 
+                  placeholder="Escribe tu mensaje aquí..." 
+                  required></textarea>
+              </div>
+
+              <!-- Mensaje de estado accesible -->
+              <div id="contact-form-feedback" class="form-feedback" role="status" aria-live="polite"></div>
+
+              <button type="submit" class="btn btn--primary btn--block">Enviar mensaje (Demostración)</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================
+       09. FOOTER
+       Copyright, nombre del propietario, navegación repetida,
+       redes sociales y créditos técnicos.
+       ======================================================== -->
+  <footer class="site-footer" id="footer" aria-labelledby="footer-heading">
+    <div class="container footer-container">
+      
+      <h2 id="footer-heading" class="sr-only">Pie de página y créditos</h2>
+
+      <div class="footer-top">
+        <!-- Identidad y propietario -->
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo" aria-label="Ir al inicio del portfolio">
+            <span class="brand-monogram" aria-hidden="true">&lt;[IN]&gt;</span>
+            <span class="brand-name">[NOMBRE Y APELLIDO]</span>
+          </a>
+          <p class="footer-tagline">
+            Front-End Developer en formación — Licenciatura en Sistemas de Información.
+          </p>
+          <!-- CONFIGURAR: Ubicación en pie -->
+          <p class="field-note">[CONFIGURAR: Ciudad, País]</p>
+        </div>
+
+        <!-- Navegación repetida de las nueve secciones -->
+        <nav class="footer-nav" aria-label="Navegación del pie de página">
+          <h3 class="footer-heading">Secciones</h3>
+          <ul class="footer-nav-list">
+            <li><a href="#header">01. Inicio</a></li>
+            <li><a href="#hero">02. Presentación</a></li>
+            <li><a href="#metrics">03. Métricas</a></li>
+            <li><a href="#skills">04. Skills</a></li>
+            <li><a href="#projects">05. Proyectos</a></li>
+            <li><a href="#experience">06. Trayectoria</a></li>
+            <li><a href="#about">07. Sobre Mí</a></li>
+            <li><a href="#contact">08. Contacto</a></li>
+            <li><a href="#footer">09. Pie</a></li>
+          </ul>
+        </nav>
+
+        <!-- Enlaces a redes sociales y plataformas -->
+        <div class="footer-social">
+          <h3 class="footer-heading">Conectar</h3>
+          <ul class="footer-social-list">
+            <!-- CONFIGURAR: GitHub en footer -->
+            <li>
+              <a href="https://github.com/[CONFIGURAR_USUARIO_GITHUB]" target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+            </li>
+            <!-- CONFIGURAR: LinkedIn en footer -->
+            <li>
+              <a href="https://linkedin.com/in/[CONFIGURAR_PERFIL_LINKEDIN]" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+            </li>
+            <!-- CONFIGURAR: Email en footer -->
+            <li>
+              <a href="mailto:[CONFIGURAR_EMAIL@EJEMPLO.COM]">
+                Correo Electrónico
+              </a>
+            </li>
+            <!-- CONFIGURAR: CV en footer -->
+            <li>
+              <a href="[CONFIGURAR: URL de CV en PDF]" target="_blank" rel="noopener noreferrer">
+                Curriculum Vitae (PDF)
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Barra inferior con copyright y créditos técnicos -->
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; <span id="current-year">2026</span> <strong>[NOMBRE Y APELLIDO]</strong>. Todos los derechos reservados.
+        </p>
+        <p class="tech-credits">
+          Desarrollado con HTML5 semántico, CSS3 y JavaScript vanilla. Sin frameworks.
+        </p>
+        <a href="#header" class="back-to-top" aria-label="Volver arriba de la página">
+          <span>Volver arriba</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
