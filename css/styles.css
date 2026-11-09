@@ -9,9 +9,8 @@
  * - Tipografía principal: Inter, con fallbacks Arial y sans-serif.
  * - Sistema de espaciado modular en múltiplos de 8 px.
  * - Arquitectura Mobile-First optimizada para 375px, 768px y 1280px.
- * - Header sticky con navegación libre de desbordamientos en todas las resoluciones.
- * - Cero scroll horizontal involuntario (overflow-x: hidden).
- * - Cumplimiento estricto de accesibilidad WCAG 2.2 AA.
+ * - Header sticky con navegación adaptable a todas las resoluciones.
+ * - Sin ocultar desbordamientos: las dimensiones se ajustan al espacio disponible.
  * ==========================================================================
  */
 
@@ -107,7 +106,6 @@ body {
   flex-direction: column;
   background-color: var(--color-background);
   color: var(--color-text);
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -297,7 +295,7 @@ button {
 .btn--secondary {
   background-color: var(--color-background);
   color: var(--color-text);
-  border-color: var(--color-border);
+  border-color: var(--color-text-secondary);
 }
 
 .btn--secondary:hover {
@@ -310,7 +308,7 @@ button {
 .btn--outline {
   background-color: transparent;
   color: var(--color-text);
-  border-color: var(--color-border);
+  border-color: var(--color-text-secondary);
 }
 
 .btn--outline:hover {
@@ -338,7 +336,7 @@ button {
 .btn--outline-sm {
   background-color: var(--color-background);
   color: var(--color-text);
-  border-color: var(--color-border);
+  border-color: var(--color-text-secondary);
   font-size: var(--font-size-xs);
   padding: 0.5rem 0.85rem;
   min-height: 2.25rem;
@@ -434,7 +432,7 @@ button {
   height: 2.5rem;
   padding: 0.5rem;
   background-color: var(--color-background);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-text-secondary);
   z-index: 1001;
   flex-shrink: 0;
 }
@@ -1229,7 +1227,7 @@ button {
   align-items: center;
   gap: var(--space-3);
   background-color: var(--color-background);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-text-secondary);
   padding: var(--space-4);
   color: var(--color-text);
   transition: border-color var(--transition-subtle), transform var(--transition-subtle);
@@ -1403,6 +1401,9 @@ button {
 
 .footer-nav-list a,
 .footer-social-list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
   color: var(--color-text-secondary);
   transition: color var(--transition-subtle);
 }
@@ -1429,6 +1430,7 @@ button {
 .back-to-top {
   display: inline-flex;
   align-items: center;
+  min-height: 1.75rem;
   gap: var(--space-1);
   color: var(--color-text-secondary);
   font-weight: 500;
@@ -1469,6 +1471,9 @@ button {
 }
 
 .breadcrumbs__item a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
   color: var(--color-text-secondary);
 }
 
@@ -1652,7 +1657,7 @@ button {
     padding-bottom: var(--space-16);
   }
 
-  /* Header en Tablet: Barra de 2 niveles (Fila 1: Logo + Acciones, Fila 2: 9 enlaces de navegación) */
+  /* Navegación en menú desplegable hasta que los nueve enlaces caben en dos filas. */
   .site-header {
     height: auto;
     min-height: var(--header-height);
@@ -1718,8 +1723,6 @@ button {
     padding-top: var(--space-2);
     border-top: 1px solid var(--color-border-subtle);
     gap: 0;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
   }
 
   .nav-link {
@@ -1851,58 +1854,75 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   DESKTOP INTERMEDIO: min-width: 1024px
-   Header se unifica en una sola fila horizontal espaciosa
+   DESKTOP: min-width: 1024px
+   Navegación en dos niveles para conservar espacio para los nueve enlaces.
    -------------------------------------------------------------------------- */
 @media (min-width: 1024px) {
   :root {
-    --header-height: 4.5rem;
+    --header-height: 5.5rem;
   }
 
   .site-header {
-    height: var(--header-height);
-    padding: 0;
+    height: auto;
+    min-height: var(--header-height);
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-2);
   }
 
   .header-container {
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    row-gap: 0;
+    row-gap: var(--space-2);
   }
 
   .brand-logo {
-    order: unset;
+    order: 1;
     max-width: none;
   }
 
   .primary-nav {
-    order: unset;
-    flex-direction: row;
-    align-items: center;
-    width: auto;
-    gap: var(--space-6);
+    order: 2;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: var(--space-2);
   }
 
   .nav-actions {
-    order: unset;
-    position: static;
-    gap: var(--space-3);
+    order: 1;
+    position: absolute;
+    right: var(--container-padding);
+    top: var(--space-2);
+    flex-direction: row;
+    align-items: center;
+    padding-top: 0;
+    border-top: none;
+    gap: var(--space-2);
+    width: auto;
   }
 
   .nav-list {
-    order: unset;
-    width: auto;
-    border-top: none;
-    padding-top: 0;
-    gap: var(--space-1);
-    overflow-x: visible;
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--color-border-subtle);
+    gap: 0;
+    overflow: visible;
   }
 
   .nav-link {
-    font-size: var(--font-size-sm);
-    padding: 0.45rem 0.65rem;
+    font-size: var(--font-size-xs);
+    padding: 0.35rem 0.25rem;
+    white-space: nowrap;
+  }
+
+  .nav-actions .btn {
+    width: auto;
   }
 
   /* Skills: 3 columnas completas en Desktop */
@@ -1925,6 +1945,84 @@ button {
   }
 }
 
+/* Tablet: mantener el menú desplegable hasta que la navegación quepa en dos filas. */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .header-container {
+    flex-wrap: nowrap;
+  }
+
+  .brand-logo {
+    order: unset;
+    max-width: calc(100% - 3.5rem);
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .primary-nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-background);
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: var(--space-6) var(--container-padding);
+    gap: var(--space-6);
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .primary-nav.is-open {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding-top: 0;
+    border-top: none;
+    gap: var(--space-1);
+    overflow: visible;
+  }
+
+  .nav-link {
+    font-size: var(--font-size-base);
+    padding: 0.65rem 0.75rem;
+    white-space: normal;
+    border-left: 2px solid transparent;
+    border-bottom: none;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible,
+  .nav-link.active {
+    background-color: var(--color-surface);
+    border-left-color: var(--color-accent);
+    border-bottom-color: transparent;
+  }
+
+  .nav-actions {
+    position: static;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+    gap: var(--space-3);
+    width: 100%;
+  }
+
+  .nav-actions .btn {
+    width: 100%;
+  }
+}
+
 /* --------------------------------------------------------------------------
    DESKTOP COMPLETO: min-width: 1280px
    Contenedor amplio a 1200px con grillas de 4 columnas
@@ -1937,11 +2035,6 @@ button {
   .section {
     padding-top: var(--space-20);
     padding-bottom: var(--space-20);
-  }
-
-  .nav-link {
-    font-size: var(--font-size-sm);
-    padding: 0.5rem 0.85rem;
   }
 
   /* Hero: máximo impacto editorial */

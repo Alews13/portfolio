@@ -4,7 +4,7 @@
  * Archivo de scripts vanilla (main.js)
  * 
  * Funcionalidades perfeccionadas:
- * 1. Control accesible del menú móvil (aria-expanded, aria-controls, teclado, focus trap).
+ * 1. Control accesible del menú desplegable (aria-expanded, aria-controls y teclado).
  * 2. Cierre automático del menú al hacer clic en enlaces, fondo o pulsar Escape.
  * 3. Indicador de enlace activo en navegación según posición de scroll (IntersectionObserver).
  * 4. Desplazamiento suave por anclas con compensación de la altura del encabezado.
@@ -44,7 +44,7 @@ function initMobileNavigation() {
   const navLinks = primaryNav.querySelectorAll('a');
   navLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 1024) {
         toggleMenu(false);
       }
     });
@@ -53,7 +53,7 @@ function initMobileNavigation() {
   // Cerrar menú al hacer clic en el logotipo si estuviera desplegado
   if (brandLogo) {
     brandLogo.addEventListener('click', () => {
-      if (window.innerWidth < 768 && navToggle.getAttribute('aria-expanded') === 'true') {
+      if (window.innerWidth < 1024 && navToggle.getAttribute('aria-expanded') === 'true') {
         toggleMenu(false);
       }
     });
@@ -81,8 +81,8 @@ function initMobileNavigation() {
       return;
     }
 
-    // Trampa de foco (Focus Trap) cuando el menú móvil está abierto
-    if (event.key === 'Tab' && isExpanded && window.innerWidth < 768) {
+    // Trampa de foco mientras el menú desplegable está abierto
+    if (event.key === 'Tab' && isExpanded && window.innerWidth < 1024) {
       const focusableElements = [
         navToggle,
         ...primaryNav.querySelectorAll('a[href], button:not([disabled]), input, textarea')
@@ -111,7 +111,7 @@ function initMobileNavigation() {
 
   // Cerrar menú automáticamente si la ventana se redimensiona a tablet/desktop
   window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768 && navToggle.getAttribute('aria-expanded') === 'true') {
+    if (window.innerWidth >= 1024 && navToggle.getAttribute('aria-expanded') === 'true') {
       toggleMenu(false);
     }
   });
@@ -128,8 +128,8 @@ function initMobileNavigation() {
     );
     primaryNav.classList.toggle('is-open', open);
 
-    // Bloquear scroll de fondo exclusivamente en pantallas móviles
-    if (window.innerWidth < 768) {
+    // Bloquear el desplazamiento de fondo mientras el menú desplegable está abierto.
+    if (window.innerWidth < 1024) {
       document.body.style.overflow = open ? 'hidden' : '';
     } else {
       document.body.style.overflow = '';
