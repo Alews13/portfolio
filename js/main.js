@@ -7,9 +7,8 @@
  * 1. Control accesible del menú móvil (aria-expanded, aria-controls, teclado, focus trap).
  * 2. Cierre automático del menú al hacer clic en enlaces, fondo o pulsar Escape.
  * 3. Indicador de enlace activo en navegación según posición de scroll (IntersectionObserver).
- * 4. Microinteracciones de desplazamiento suave con compensación de altura de header.
- * 5. Gestión accesible del formulario de contacto demostrativo (validación HTML5 y feedback live).
- * 6. Actualización dinámica del año de copyright en el pie de página.
+ * 4. Desplazamiento suave por anclas con compensación de la altura del encabezado.
+ * 5. Actualización dinámica del año de copyright en el pie de página.
  * ==========================================================================
  */
 
@@ -18,7 +17,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNavigation();
   initActiveNavObserver();
-  initContactFormDemo();
   initCurrentYear();
   initSmoothScrollFallback();
 });
@@ -191,43 +189,7 @@ function initActiveNavObserver() {
 
 /**
  * --------------------------------------------------------------------------
- * 3. Formulario de Contacto Demostrativo Accesible
- * --------------------------------------------------------------------------
- */
-function initContactFormDemo() {
-  const form = document.getElementById('contact-form');
-  const feedback = document.getElementById('contact-form-feedback');
-
-  if (!form || !feedback) return;
-
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    if (!form.checkValidity()) {
-      feedback.textContent = 'Por favor, completa todos los campos requeridos correctamente.';
-      feedback.className = 'form-feedback is-visible form-feedback--error';
-      feedback.focus();
-      return;
-    }
-
-    const nameInput = document.getElementById('contact-name');
-    const senderName = nameInput && nameInput.value.trim() ? nameInput.value.trim() : 'Visitante';
-
-    feedback.textContent = `¡Gracias por tu mensaje, ${senderName}! En esta etapa el formulario es una maqueta demostrativa sin servidor. Podés comunicarte directamente por correo electrónico o LinkedIn.`;
-    feedback.className = 'form-feedback is-visible form-feedback--success';
-
-    form.reset();
-
-    setTimeout(() => {
-      feedback.className = 'form-feedback';
-      feedback.textContent = '';
-    }, 8000);
-  });
-}
-
-/**
- * --------------------------------------------------------------------------
- * 4. Actualización Dinámica del Año en el Pie de Página
+ * 3. Actualización Dinámica del Año en el Pie de Página
  * --------------------------------------------------------------------------
  */
 function initCurrentYear() {
@@ -239,7 +201,7 @@ function initCurrentYear() {
 
 /**
  * --------------------------------------------------------------------------
- * 5. Soporte Seguro de Navegación por Anclas
+ * 4. Soporte Seguro de Navegación por Anclas
  * --------------------------------------------------------------------------
  */
 function initSmoothScrollFallback() {
