@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Metadatos de la página de caso de estudio -->
-  <title>Caso de estudio: portafolio web personal | Alejandro Waigandt Stach</title>
-  <meta name="description" content="Caso de estudio sobre el diseño de interfaz y desarrollo de un portafolio web personal para la materia UX/UI.">
+  <title>Caso de estudio: SmartTicket | Alejandro Waigandt Stach</title>
+  <meta name="description" content="Caso de estudio de SmartTicket: sistema académico para cotizar, gestionar la venta y controlar entradas para eventos musicales.">
   <meta name="author" content="Alejandro Waigandt Stach">
   <meta name="theme-color" content="#FFFFFF">
 
@@ -20,9 +20,8 @@
 
   <!-- Open Graph / Redes sociales -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Caso de estudio: portafolio web personal | Alejandro Waigandt Stach">
-  <meta property="og:description" content="Proceso de diseño UX/UI, estructuración semántica y desarrollo de un portafolio personal académico.">
-  <meta property="og:image" content="../assets/images/alejandro-waigandt.jpg">
+  <meta property="og:title" content="Caso de estudio: SmartTicket | Alejandro Waigandt Stach">
+  <meta property="og:description" content="Organización de la solución, funcionalidades implementadas y decisiones de desarrollo de SmartTicket.">
 
   <!-- Hojas de estilo centralizadas -->
   <link rel="stylesheet" href="../css/styles.css">
@@ -67,11 +66,11 @@
 
         <div class="nav-actions">
           <a 
-            href="https://github.com/Alews13/portfolio"
+            href="https://github.com/Alews13/TP9-POO-Grasp-Solid"
             class="btn btn--outline-sm nav-github-link" 
             target="_blank" 
             rel="noopener noreferrer" 
-            aria-label="Ver repositorio del proyecto en GitHub (se abre en pestaña nueva)">
+            aria-label="Ver repositorio SmartTicket en GitHub (se abre en pestaña nueva)">
             <span>Repositorio</span>
           </a>
         </div>
@@ -91,49 +90,48 @@
           <ol class="breadcrumbs__list">
             <li class="breadcrumbs__item"><a href="../index.html">Inicio</a></li>
             <li class="breadcrumbs__item"><a href="../index.html#projects">Proyectos</a></li>
-            <li class="breadcrumbs__item" aria-current="page">Caso de estudio: portafolio personal</li>
+            <li class="breadcrumbs__item" aria-current="page">Caso de estudio: SmartTicket</li>
           </ol>
         </nav>
 
-        <span class="case-study-tag">Caso de estudio académico — UX/UI</span>
+        <span class="case-study-tag">Caso de estudio académico — Programación orientada a objetos</span>
         
         <!-- Único h1 en la página del caso de estudio -->
         <h1 class="case-study-title">
-          Diseño y maquetación de un portafolio web personal con enfoque semántico y accesible
+          SmartTicket: venta y control de entradas para eventos
         </h1>
 
         <p class="case-study-lead">
-          Documentación técnica y metodológica sobre la estructura del portafolio personal, sus nueve secciones y la accesibilidad web sin frameworks.
+          Sistema organizado en etapas para cotizar entradas, procesar pagos simulados, emitir entradas y validar el acceso a eventos musicales.
         </p>
 
         <!-- Ficha técnica del proyecto -->
         <div class="case-study-meta-grid">
           <div class="case-study-meta-item">
-            <span class="meta-label">Rol:</span>
-            <span class="meta-value">Estudiante de Sistemas / Diseño UX/UI</span>
+            <span class="meta-label">Tipo:</span>
+            <span class="meta-value">Sistema académico de gestión de entradas</span>
           </div>
           <div class="case-study-meta-item">
-            <span class="meta-label">Contexto:</span>
-            <span class="meta-value">Proyecto académico — Licenciatura en Sistemas de Información</span>
+            <span class="meta-label">Enfoque:</span>
+            <span class="meta-value">Programación orientada a objetos, GRASP y SOLID</span>
           </div>
           <div class="case-study-meta-item">
             <span class="meta-label">Tecnologías:</span>
-            <span class="meta-value">HTML5 semántico, CSS3 y JavaScript</span>
+            <span class="meta-value">FastAPI, SQLAlchemy y SQLite</span>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- Imagen de cabecera del proyecto -->
+    <!-- Presentación tipográfica del proyecto -->
     <div class="container">
       <figure class="case-study-figure">
-        <img 
-          src="../assets/projects/project-placeholder-1.svg" 
-          alt="Representación esquemática de las nueve secciones del portafolio web adaptable"
-          width="800" 
-          height="500">
+        <div class="project-card__wordmark" aria-hidden="true">
+          <span>Gestión de venta y control de entradas</span>
+          <strong>SmartTicket</strong>
+        </div>
         <figcaption class="field-note text-center">
-          Representación esquemática del portafolio, con identidad visual minimalista y monocromática.
+          Presentación tipográfica. No se incluyen capturas de pantalla del sistema.
         </figcaption>
       </figure>
     </div>
@@ -141,115 +139,120 @@
     <!-- Cuerpo de contenido del caso de estudio -->
     <article class="case-study-content container">
       
-      <!-- 1. Introducción y Resumen -->
+      <!-- 1. Contexto del proyecto -->
       <section class="case-section" aria-labelledby="cs-summary">
-        <h2 class="case-section__title" id="cs-summary">1. Resumen Ejecutivo</h2>
+        <h2 class="case-section__title" id="cs-summary">1. Contexto</h2>
         <p>
-          Este proyecto corresponde al desarrollo del portafolio personal de Alejandro Waigandt Stach, estudiante de segundo año de la Licenciatura en Sistemas de Información, interesado en el desarrollo de software, la inteligencia artificial y la tecnología. El sitio reúne la estructura, la accesibilidad y una identidad visual minimalista, monocromática y editorial.
+          SmartTicket es un proyecto académico de gestión de venta y control de entradas para eventos musicales. El dominio del sistema contempla lugares, sectores, eventos, clientes, ventas y entradas.
         </p>
         <p>
-          El principal requerimiento consistió en diseñar y codificar un sitio web estático sin frameworks, utilizando tecnologías estándar del navegador (HTML5, CSS3 y JavaScript), con claridad estructural, espaciado modular, una escala monocromática y atención a la accesibilidad.
+          El repositorio organiza la aplicación como una API desarrollada con FastAPI, SQLAlchemy y SQLite. La documentación divide el alcance en tres etapas: cotización, procesamiento de pago y emisión, y control de acceso.
         </p>
       </section>
 
-      <!-- 2. El Desafío UX/UI -->
+      <!-- 2. Necesidad -->
       <section class="case-section" aria-labelledby="cs-challenge">
-        <h2 class="case-section__title" id="cs-challenge">2. El Desafío UX/UI</h2>
+        <h2 class="case-section__title" id="cs-challenge">2. Necesidad</h2>
         <p>
-          El desafío principal radicó en organizar una cantidad significativa de contenido estructurado en <strong>nueve secciones obligatorias</strong> sin sobrecargar cognitivamente al visitante y manteniendo una jerarquía visual armónica tanto en dispositivos móviles (375 px) como en pantallas de escritorio (1280 px).
+          La gestión de un evento requiere relacionar el lugar con sus sectores, definir precios por sector y administrar entradas disponibles. La solución también debe distinguir una cotización de una venta: cotizar no reserva ni emite entradas.
         </p>
         <div class="challenge-box">
-          <h3 class="challenge-box__title">Restricciones y condiciones clave:</h3>
+          <h3 class="challenge-box__title">Alcance documentado</h3>
           <ul class="bullet-list">
-            <li>No inventar experiencia laboral ni logros que no correspondan al nivel del estudiante (2° año de la carrera).</li>
-            <li>Centralizar estilos y comportamientos en archivos únicos y limpios (<code>styles.css</code> y <code>main.js</code>).</li>
-            <li>Garantizar navegación completa por teclado y soporte para usuarios con preferencias de movimiento reducido.</li>
-            <li>Mantener una estética neutra y minimalista, basada en la identidad visual del portafolio.</li>
+            <li>Administrar eventos, lugares, sectores, precios y entradas.</li>
+            <li>Evitar confirmar una venta si la cotización cambió o las entradas ya no están disponibles.</li>
+            <li>Validar la entrada emitida y evitar que una entrada ya utilizada habilite otro acceso.</li>
           </ul>
         </div>
       </section>
 
-      <!-- 3. Objetivos del Proyecto -->
+      <!-- 3. Objetivo -->
       <section class="case-section" aria-labelledby="cs-objectives">
-        <h2 class="case-section__title" id="cs-objectives">3. Objetivos</h2>
+        <h2 class="case-section__title" id="cs-objectives">3. Objetivo</h2>
+        <p>
+          Implementar un sistema que conecte la cotización, la venta y el control de entradas, aplicando programación orientada a objetos y organizando responsabilidades con principios GRASP y SOLID.
+        </p>
         <ul class="bullet-list">
-          <li><strong>Estructural:</strong> Maquetar el documento con etiquetas HTML5 semánticas (<code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>footer</code>) con un único encabezado de primer nivel (<code>h1</code>).</li>
-          <li><strong>Navegabilidad:</strong> Proveer un menú de anclas sticky con opción de navegación móvil hamburguesa accesible con atributos ARIA adecuados (<code>aria-expanded</code>, <code>aria-controls</code>).</li>
-          <li><strong>Adaptabilidad:</strong> Implementar un layout móvil-primero utilizando CSS Grid y Flexbox que responda fluidamente en 375 px, 768 px y 1280 px.</li>
-          <li><strong>Extensibilidad:</strong> Dejar preparados y debidamente rotulados todos los campos de configuración personal para que el estudiante pueda sustituirlos sin romper la maquetación.</li>
+          <li>Separar las peticiones HTTP de las reglas de negocio y del acceso a datos.</li>
+          <li>Representar lugares, sectores, eventos, precios, ventas y entradas mediante entidades relacionadas.</li>
+          <li>Proteger el flujo de emisión y acceso con validaciones de disponibilidad, pago y estado de la entrada.</li>
         </ul>
       </section>
 
-      <!-- 4. Arquitectura de Información y Secciones -->
+      <!-- 4. Organización de la solución -->
       <section class="case-section" aria-labelledby="cs-architecture">
-        <h2 class="case-section__title" id="cs-architecture">4. Arquitectura de Información</h2>
+        <h2 class="case-section__title" id="cs-architecture">4. Organización de la solución</h2>
         <p>
-          La estructura de información fue organizada de forma lineal y progresiva para guiar al evaluador desde la presentación general hasta los medios de contacto:
+          El código divide la solución en capas con responsabilidades diferenciadas:
         </p>
         <ol class="architecture-list">
-          <li><strong>01. Encabezado y navegación:</strong> Identidad, accesos directos a las nueve secciones y enlace a GitHub.</li>
-          <li><strong>02. Presentación:</strong> Perfil del estudiante y enlaces a proyectos y contacto.</li>
-          <li><strong>03. Métricas:</strong> Información destacada sobre estudios, formación complementaria, herramientas y desarrollo asistido por IA.</li>
-          <li><strong>04. Competencias:</strong> Desarrollo asistido por IA, formación complementaria en programación y herramientas utilizadas.</li>
-          <li><strong>05. Proyectos:</strong> Tarjetas con información y enlaces a repositorios y al caso de estudio.</li>
-          <li><strong>06. Trayectoria:</strong> Formación académica y complementaria.</li>
-          <li><strong>07. Sobre mí:</strong> Perfil personal, fotografía, idiomas e intereses.</li>
-          <li><strong>08. Contacto:</strong> Canales de contacto y formulario demostrativo.</li>
-          <li><strong>09. Pie de página:</strong> Créditos técnicos, derechos de autor y navegación.</li>
+          <li><strong>Rutas:</strong> reciben las solicitudes y traducen errores de la aplicación a respuestas HTTP.</li>
+          <li><strong>Servicios:</strong> contienen las reglas de catálogo, cotización, pago y acceso.</li>
+          <li><strong>Repositorios:</strong> concentran las consultas y escrituras de persistencia con SQLAlchemy.</li>
+          <li><strong>Modelos y esquemas:</strong> representan entidades persistidas y datos de entrada y salida de la API.</li>
+          <li><strong>Inyección de dependencias:</strong> conecta servicios con repositorios y dependencias de FastAPI.</li>
         </ol>
       </section>
 
-      <!-- 5. Implementación Técnica y Accesibilidad -->
+      <!-- 5. Decisiones de diseño y desarrollo -->
       <section class="case-section" aria-labelledby="cs-tech">
-        <h2 class="case-section__title" id="cs-tech">5. Implementación Técnica</h2>
+        <h2 class="case-section__title" id="cs-tech">5. Decisiones de diseño y desarrollo</h2>
         <p>
-          Para mantener una implementación sencilla, no se incorporaron dependencias de terceros ni frameworks CSS como Bootstrap o Tailwind. Las decisiones técnicas se basaron en:
+          La estructura observada en el repositorio prioriza la separación de responsabilidades y la validación del flujo de negocio:
         </p>
         <ul class="bullet-list">
-          <li><strong>Variables CSS:</strong> Se definió una paleta neutra en <code>:root</code>, que permite modificar los colores desde un único lugar.</li>
-          <li><strong>Scroll suave con compensación:</strong> Se utilizó <code>scroll-behavior: smooth</code> complementado con <code>scroll-margin-top: 5rem</code> en cada sección con identificador para evitar que el header fijo oculte los encabezados.</li>
-          <li><strong>Enlace para saltar al contenido:</strong> Se incluyó un enlace accesible al inicio de la página para que quienes usan teclado y lectores de pantalla puedan ir directamente al contenido principal.</li>
-          <li><strong>Media queries de accesibilidad:</strong> Implementación de <code>@media (prefers-reduced-motion: reduce)</code> para respetar las preferencias de usuarios con sensibilidad a animaciones.</li>
+          <li>El servicio de cotización comprueba cantidad, disponibilidad y precio sin reservar entradas.</li>
+          <li>El servicio de pago verifica cliente, precio cotizado y disponibilidad antes de invocar la pasarela simulada.</li>
+          <li>La confirmación de una venta y emisión de entradas se realiza en una transacción de base de datos.</li>
+          <li>El control de acceso verifica código QR, pago, estado de la entrada y fecha local del evento; una entrada utilizada no se vuelve a admitir.</li>
+          <li>Las decisiones de negocio se distribuyen entre servicios y repositorios, con contratos e inyección de dependencias descritos en el proyecto.</li>
         </ul>
       </section>
 
-      <!-- 6. Resultados y Aprendizajes -->
-      <section class="case-section" aria-labelledby="cs-learnings">
-        <h2 class="case-section__title" id="cs-learnings">6. Resultados y Aprendizajes</h2>
+      <!-- 6. Funcionalidades verificadas -->
+      <section class="case-section" aria-labelledby="cs-features">
+        <h2 class="case-section__title" id="cs-features">6. Funcionalidades verificadas</h2>
+        <ul class="bullet-list">
+          <li>Crear lugares y sectores, y configurar eventos con precios por sector.</li>
+          <li>Generar entradas disponibles al crear un evento y cotizar entradas según cantidad y sector.</li>
+          <li>Procesar una venta mediante una pasarela de pago simulada; ante la aprobación, registrar la venta y emitir entradas con código QR.</li>
+          <li>Rechazar el pago simulado sin registrar la venta ni emitir entradas.</li>
+          <li>Validar el acceso con el código QR de una entrada pagada y emitida, y marcarla como utilizada.</li>
+          <li>Rechazar entradas inválidas, no pagadas, ya utilizadas o que no correspondan a la fecha local del evento.</li>
+        </ul>
         <p>
-          La finalización de esta primera fase permitió validar los siguientes puntos:
+          La documentación del repositorio incluye pruebas automatizadas para las etapas de cotización, pago y control de acceso.
         </p>
-        <div class="learnings-grid">
-          <div class="learning-card">
-            <h3 class="learning-card__title">Dominio de Estándares Web</h3>
-            <p>Construir un sitio completo sin apoyarse en frameworks refuerza el entendimiento profundo del modelo de cajas, el apilamiento (z-index) y el DOM nativo.</p>
-          </div>
-          <div class="learning-card">
-            <h3 class="learning-card__title">Criterio UX en Contenido</h3>
-            <p>Aprender a comunicar con honestidad un perfil formativo de estudiante universitario sin inflar datos ni inventar experiencia laboral inexistente.</p>
-          </div>
-          <div class="learning-card">
-            <h3 class="learning-card__title">Mantenibilidad Modular</h3>
-            <p>La separación estricta en HTML, CSS y JS garantiza que la incorporación de la identidad visual definitiva en la Fase 2 sea ágil y predecible.</p>
-          </div>
+        <div class="challenge-box">
+          <h3 class="challenge-box__title">Límite del prototipo</h3>
+          <p>El pago está simulado; el proyecto no realiza cobros reales ni se presenta como un servicio comercial.</p>
         </div>
       </section>
 
-      <!-- 7. Conclusión y Próximos Pasos -->
-      <section class="case-section" aria-labelledby="cs-next">
-        <h2 class="case-section__title" id="cs-next">7. Próximos Pasos</h2>
+      <!-- 7. Aprendizajes -->
+      <section class="case-section" aria-labelledby="cs-learnings">
+        <h2 class="case-section__title" id="cs-learnings">7. Aprendizajes</h2>
         <p>
-          Con la estructura base completada y testeada, las siguientes etapas del proyecto incluirán:
+          El alcance documentado permite trabajar sobre la relación entre el modelo del dominio y las responsabilidades de cada capa:
         </p>
-        <ul class="bullet-list">
-          <li>Definición de identidad visual y tipografía de acento.</li>
-          <li>Incorporación de fotografías reales del estudiante y capturas definitivas de proyectos.</li>
-          <li>Pruebas de usabilidad con usuarios finales en la cátedra de UX/UI.</li>
-        </ul>
+        <div class="learnings-grid">
+          <div class="learning-card">
+            <h3 class="learning-card__title">Modelado del dominio</h3>
+            <p>Relacionar lugares, sectores, eventos, precios, ventas y entradas para expresar el flujo de gestión de entradas.</p>
+          </div>
+          <div class="learning-card">
+            <h3 class="learning-card__title">Separación de responsabilidades</h3>
+            <p>Distinguir el manejo de peticiones, las reglas de negocio y la persistencia facilita ubicar y probar cada comportamiento.</p>
+          </div>
+          <div class="learning-card">
+            <h3 class="learning-card__title">Estados y validaciones</h3>
+            <p>La cotización, la emisión y el acceso requieren comprobar disponibilidad y estado de las entradas en cada etapa.</p>
+          </div>
+        </div>
 
         <div class="case-study-cta">
-          <a href="../index.html#projects" class="btn btn--primary">&larr; Volver a la lista de proyectos</a>
-          <a href="../index.html#contact" class="btn btn--secondary">Contactar</a>
+          <a href="https://github.com/Alews13/TP9-POO-Grasp-Solid" class="btn btn--outline-sm" target="_blank" rel="noopener noreferrer">Ver repositorio de SmartTicket</a>
+          <a href="../index.html#projects" class="btn btn--primary">&larr; Volver a proyectos</a>
         </div>
       </section>
 
@@ -265,7 +268,7 @@
           &copy; <span id="current-year">2026</span> <strong>Alejandro Waigandt Stach</strong>. Caso de estudio académico.
         </p>
         <p class="tech-credits">
-          Desarrollado con HTML5 semántico, CSS3 y JavaScript vanilla.
+          Contenido basado en el código y la documentación del repositorio SmartTicket.
         </p>
         <a href="#header" class="back-to-top" aria-label="Volver arriba">
           <span>Volver arriba</span>
