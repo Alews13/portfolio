@@ -1086,6 +1086,7 @@ button {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  filter: grayscale(100%);
   background-color: var(--color-surface);
   border-radius: 0;
 }
@@ -1649,96 +1650,12 @@ button {
 @media (min-width: 768px) {
   :root {
     --container-padding: 2rem;
-    --header-height: 5.5rem; /* Altura adaptada para cabecera de dos niveles */
+    --header-height: 5.5rem;
   }
 
   .section {
     padding-top: var(--space-16);
     padding-bottom: var(--space-16);
-  }
-
-  /* Navegación en menú desplegable hasta que los nueve enlaces caben en dos filas. */
-  .site-header {
-    height: auto;
-    min-height: var(--header-height);
-    padding-top: var(--space-2);
-    padding-bottom: var(--space-2);
-  }
-
-  .header-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    row-gap: var(--space-2);
-  }
-
-  .brand-logo {
-    order: 1;
-    max-width: 60%;
-  }
-
-  .nav-toggle {
-    display: none;
-  }
-
-  .primary-nav {
-    order: 2;
-    position: static;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    gap: var(--space-2);
-    overflow-y: visible;
-  }
-
-  .nav-actions {
-    order: 1;
-    position: absolute;
-    right: var(--container-padding);
-    top: var(--space-2);
-    flex-direction: row;
-    align-items: center;
-    padding-top: 0;
-    border-top: none;
-    gap: var(--space-2);
-    width: auto;
-  }
-
-  .nav-actions .btn {
-    width: auto;
-  }
-
-  .nav-list {
-    order: 2;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding-top: var(--space-2);
-    border-top: 1px solid var(--color-border-subtle);
-    gap: 0;
-  }
-
-  .nav-link {
-    font-size: var(--font-size-xs);
-    padding: 0.35rem 0.45rem;
-    white-space: nowrap;
-    border-left: none;
-    border-bottom: 2px solid transparent;
-  }
-
-  .nav-link:hover,
-  .nav-link:focus-visible,
-  .nav-link.active {
-    background-color: transparent;
-    border-left-color: transparent;
-    border-bottom-color: var(--color-accent);
   }
 
   /* Hero */
@@ -1855,74 +1772,10 @@ button {
 
 /* --------------------------------------------------------------------------
    DESKTOP: min-width: 1024px
-   Navegación en dos niveles para conservar espacio para los nueve enlaces.
    -------------------------------------------------------------------------- */
 @media (min-width: 1024px) {
   :root {
     --header-height: 5.5rem;
-  }
-
-  .site-header {
-    height: auto;
-    min-height: var(--header-height);
-    padding-top: var(--space-2);
-    padding-bottom: var(--space-2);
-  }
-
-  .header-container {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    row-gap: var(--space-2);
-  }
-
-  .brand-logo {
-    order: 1;
-    max-width: none;
-  }
-
-  .primary-nav {
-    order: 2;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    gap: var(--space-2);
-  }
-
-  .nav-actions {
-    order: 1;
-    position: absolute;
-    right: var(--container-padding);
-    top: var(--space-2);
-    flex-direction: row;
-    align-items: center;
-    padding-top: 0;
-    border-top: none;
-    gap: var(--space-2);
-    width: auto;
-  }
-
-  .nav-list {
-    order: 2;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding-top: var(--space-2);
-    border-top: 1px solid var(--color-border-subtle);
-    gap: 0;
-    overflow: visible;
-  }
-
-  .nav-link {
-    font-size: var(--font-size-xs);
-    padding: 0.35rem 0.25rem;
-    white-space: nowrap;
-  }
-
-  .nav-actions .btn {
-    width: auto;
   }
 
   /* Skills: 3 columnas completas en Desktop */
@@ -1945,8 +1798,8 @@ button {
   }
 }
 
-/* Tablet: mantener el menú desplegable hasta que la navegación quepa en dos filas. */
-@media (min-width: 768px) and (max-width: 1023.98px) {
+/* Menú desplegable mientras no haya espacio suficiente para la navegación completa. */
+@media (min-width: 768px) and (max-width: 1279.98px) {
   .header-container {
     flex-wrap: nowrap;
   }
@@ -2054,6 +1907,94 @@ button {
 
   .project-card__body {
     padding: var(--space-10);
+  }
+
+  .site-header {
+    height: auto;
+    min-height: var(--header-height);
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-2);
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: var(--space-2);
+  }
+
+  .brand-logo {
+    order: 1;
+    max-width: none;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .primary-nav {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: var(--space-2);
+    position: static;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    min-width: 0;
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--color-border-subtle);
+    gap: 0;
+    overflow: visible;
+  }
+
+  .nav-item {
+    flex: 0 0 auto;
+  }
+
+  .nav-link {
+    padding: 0.35rem 0.5rem;
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible,
+  .nav-link.active {
+    background-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: var(--color-accent);
+  }
+
+  .nav-actions {
+    order: 2;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding-top: 0;
+    border-top: none;
+    gap: var(--space-2);
+  }
+
+  .nav-actions .btn {
+    width: auto;
   }
 }
 

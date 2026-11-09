@@ -44,7 +44,7 @@ function initMobileNavigation() {
   const navLinks = primaryNav.querySelectorAll('a');
   navLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      if (window.innerWidth < 1024) {
+      if (window.innerWidth < 1280) {
         toggleMenu(false);
       }
     });
@@ -53,7 +53,7 @@ function initMobileNavigation() {
   // Cerrar menú al hacer clic en el logotipo si estuviera desplegado
   if (brandLogo) {
     brandLogo.addEventListener('click', () => {
-      if (window.innerWidth < 1024 && navToggle.getAttribute('aria-expanded') === 'true') {
+      if (window.innerWidth < 1280 && navToggle.getAttribute('aria-expanded') === 'true') {
         toggleMenu(false);
       }
     });
@@ -82,7 +82,7 @@ function initMobileNavigation() {
     }
 
     // Trampa de foco mientras el menú desplegable está abierto
-    if (event.key === 'Tab' && isExpanded && window.innerWidth < 1024) {
+    if (event.key === 'Tab' && isExpanded && window.innerWidth < 1280) {
       const focusableElements = [
         navToggle,
         ...primaryNav.querySelectorAll('a[href], button:not([disabled]), input, textarea')
@@ -111,7 +111,7 @@ function initMobileNavigation() {
 
   // Cerrar menú automáticamente si la ventana se redimensiona a tablet/desktop
   window.addEventListener('resize', () => {
-    if (window.innerWidth >= 1024 && navToggle.getAttribute('aria-expanded') === 'true') {
+    if (window.innerWidth >= 1280 && navToggle.getAttribute('aria-expanded') === 'true') {
       toggleMenu(false);
     }
   });
@@ -129,7 +129,7 @@ function initMobileNavigation() {
     primaryNav.classList.toggle('is-open', open);
 
     // Bloquear el desplazamiento de fondo mientras el menú desplegable está abierto.
-    if (window.innerWidth < 1024) {
+    if (window.innerWidth < 1280) {
       document.body.style.overflow = open ? 'hidden' : '';
     } else {
       document.body.style.overflow = '';
