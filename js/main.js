@@ -213,7 +213,7 @@ function initContactFormDemo() {
     const nameInput = document.getElementById('contact-name');
     const senderName = nameInput && nameInput.value.trim() ? nameInput.value.trim() : 'Visitante';
 
-    feedback.textContent = `¡Gracias por tu mensaje, ${senderName}! En esta etapa el formulario es una maqueta demostrativa sin backend. Podés comunicarte directamente por Email o LinkedIn.`;
+    feedback.textContent = `¡Gracias por tu mensaje, ${senderName}! En esta etapa el formulario es una maqueta demostrativa sin servidor. Podés comunicarte directamente por correo electrónico o LinkedIn.`;
     feedback.className = 'form-feedback is-visible form-feedback--success';
 
     form.reset();
