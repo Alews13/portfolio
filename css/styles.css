@@ -255,6 +255,69 @@ button {
 }
 
 /* ==========================================================================
+   PÁGINA 404
+   ========================================================================== */
+.not-found {
+  display: flex;
+  align-items: center;
+  flex: 1 0 auto;
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+}
+
+.not-found__content {
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.not-found__eyebrow {
+  margin-bottom: var(--space-6);
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.not-found__code {
+  margin-left: -0.06em;
+  color: var(--color-text);
+  font-size: clamp(6rem, 28vw, 13rem);
+  font-weight: 600;
+  letter-spacing: -0.09em;
+  line-height: 0.8;
+}
+
+.not-found__title {
+  margin-top: var(--space-8);
+  font-size: clamp(var(--font-size-2xl), 6vw, var(--font-size-4xl));
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.not-found__description {
+  margin-top: var(--space-4);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+}
+
+.not-found__link {
+  margin-top: var(--space-8);
+}
+
+@media (max-width: 479px) {
+  .not-found__code {
+    font-size: clamp(3rem, 16vw, 4rem);
+  }
+}
+
+/* ==========================================================================
    BOTONES MINIMALISTAS
    ========================================================================== */
 .btn {
@@ -1651,6 +1714,16 @@ button {
   :root {
     --container-padding: 2rem;
     --header-height: 5.5rem;
+  }
+
+  .not-found {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .not-found__content {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
   }
 
   .section {

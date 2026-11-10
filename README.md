@@ -17,6 +17,7 @@ El sitio conserva las nueve secciones solicitadas:
 9. Pie de página.
 
 También incluye una página interna de caso de estudio dedicada a SmartTicket.
+Las rutas inexistentes muestran una página 404 personalizada mediante el comportamiento estándar de Netlify.
 
 ## Tecnologías
 
@@ -32,6 +33,7 @@ Las herramientas y tecnologías de cada proyecto se indican en sus tarjetas cuan
 ```text
 TP6_Portfolio/
 ├── index.html
+├── 404.html
 ├── README.md
 ├── css/
 │   └── styles.css
