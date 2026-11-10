@@ -2,6 +2,10 @@
 
 Portafolio web personal realizado como proyecto académico de UX/UI. Presenta la formación, las herramientas y los proyectos de Alejandro, estudiante de segundo año de la Licenciatura en Sistemas de Información.
 
+## Sitio publicado
+
+[Ver el portafolio en Netlify](https://alejandrowaigandt.netlify.app)
+
 ## Secciones
 
 El sitio conserva las nueve secciones solicitadas:
